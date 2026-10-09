@@ -1,0 +1,113 @@
+
+{
+  "version": 1,
+  "author": "Brain Blitz",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": -100,
+      "left": 220,
+      "attrs": {"i2cAddress": "0x3c"}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn0",
+      "top": 100,
+      "left": 220,
+      "attrs": {"color": "red", "label": "RED"}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 150,
+      "left": 220,
+      "attrs": {"color": "blue", "label": "BLUE"}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 200,
+      "left": 220,
+      "attrs": {"color": "green", "label": "GREEN"}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 250,
+      "left": 220,
+      "attrs": {"color": "yellow", "label": "YELLOW"}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 320,
+      "left": 220,
+      "attrs": {"volume": "0.3"}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led0",
+      "top": 100,
+      "left": 350,
+      "attrs": {"color": "red"}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 150,
+      "left": 350,
+      "attrs": {"color": "blue"}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 200,
+      "left": 350,
+      "attrs": {"color": "green"}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 250,
+      "left": 350,
+      "attrs": {"color": "yellow"}
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "oled:VCC", "red", []],
+    ["esp:GND.1", "oled:GND", "black", []],
+    ["esp:21", "oled:SDA", "green", []],
+    ["esp:22", "oled:SCL", "blue", []],
+
+    ["esp:13", "btn0:1.l", "green", []],
+    ["esp:GND.1", "btn0:2.l", "black", []],
+    ["esp:12", "btn1:1.l", "green", []],
+    ["esp:GND.1", "btn1:2.l", "black", []],
+    ["esp:14", "btn2:1.l", "green", []],
+    ["esp:GND.1", "btn2:2.l", "black", []],
+    ["esp:27", "btn3:1.l", "green", []],
+    ["esp:GND.1", "btn3:2.l", "black", []],
+
+    ["esp:26", "buzz:1", "green", []],
+    ["esp:GND.1", "buzz:2", "black", []],
+
+    ["esp:18", "led0:A", "red", []],
+    ["led0:C", "esp:GND.1", "black", []],
+    ["esp:19", "led1:A", "blue", []],
+    ["led1:C", "esp:GND.1", "black", []],
+    ["esp:23", "led2:A", "green", []],
+    ["led2:C", "esp:GND.1", "black", []],
+    ["esp:25", "led3:A", "gold", []],
+    ["led3:C", "esp:GND.1", "black", []]
+  ],
+  "dependencies": {}
+}
